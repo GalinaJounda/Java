@@ -12,12 +12,12 @@ import java.util.Random;
 // 3) Найти максимальное значение
 // 4) Найти среднее значение
 public class Task1 {
-    public List<Integer> createRandomIntegerList(int capacity) {
+    public List<Integer> createRandomIntegerList(int capacity, int maxValue) {
         List<Integer> list = new ArrayList<>(capacity);
         Random random = new Random();
         
         for (int i = 0; i < capacity; i++) {
-            list.add(random.nextInt(101));
+            list.add(random.nextInt(maxValue + 1));
         }
         
         return list;
