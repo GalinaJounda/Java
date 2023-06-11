@@ -1,12 +1,17 @@
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+
+import Homework4.TestQueue;
+
 
 public class Homework {
     public static void main(String[] args) {        
         // runTask1_1();
         // runTask1_2();
         // runTask1_3();
-        runTask3_1();
+        // runTask3_1();
+        runTask4_1();
     }
 
     public static void runTask1_1() {
@@ -62,5 +67,31 @@ public class Homework {
         System.out.println("Минимальное значение из списка: " + min);        
         System.out.println("Максимальное значение из списка: " + max);
         System.out.println("Среднее значение из списка: " + avg);
+    }
+
+    public static void runTask4_1() {
+        Homework4.Task1 task = new Homework4.Task1();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nЗадание 4.1: Приоритетные коллекции."); 
+        System.out.println("Введите размер списка");
+        int size = scanner.nextInt();
+        LinkedList<Integer> list = task.createRandomIntegerList(size, 100);
+        scanner.close();
+        System.out.println("Исходный список: " + list);
+
+        LinkedList<Integer> reversedList = task.reverse(list);
+        System.out.println("Тот же, но перевернутый список: " + reversedList); 
+
+        TestQueue<Integer> queue = TestQueue.createRandomIntegerQueue(size, 100);
+        System.out.println("\nТестовая очередь: " + queue); 
+
+        int first = queue.first();
+        System.out.println("Первый элемент очереди: " + first);
+
+        int pointer = 1;
+        for (int i = queue.size(); i > 0; i--) {
+            queue.dequeue();
+            System.out.println("\nТестовая очередь после удаления " + pointer++ + "-го элемента" + queue); 
+        }
     }
 }
