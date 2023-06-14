@@ -11,7 +11,8 @@ public class Homework {
         // runTask1_2();
         // runTask1_3();
         // runTask3_1();
-        runTask4_1();
+        // runTask4_1();
+        runTask6_1();
     }
 
     public static void runTask1_1() {
@@ -92,6 +93,16 @@ public class Homework {
         for (int i = queue.size(); i > 0; i--) {
             queue.dequeue();
             System.out.println("\nТестовая очередь после удаления " + pointer++ + "-го элемента" + queue); 
+        }
+    }
+
+    public static void runTask6_1() {
+        Homework6.PCshop pcShop = new Homework6.PCshop();
+        System.out.println("\nЗадание 6: Хранение и обработка данных.");
+
+        pcShop.prepareProducts(40);
+        while(pcShop.selectInstruction() && pcShop.selectOption()) {
+            pcShop.executeInstruction();
         }
     }
 }
